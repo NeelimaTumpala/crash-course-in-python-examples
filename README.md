@@ -350,3 +350,304 @@ output:
 0.5
 0
 0.0
+
+example: How many times will "Not there yet" be printed?
+
+x = 0
+while x < 5:
+  print("Not there yet, x=" + str(x))
+  x = x + 1
+print("x=" + str(x))
+
+ans: 5
+
+explination: 
+
+>>> x=0
+>>> while x<5:
+	print("not there yet, x=" +str(x))
+	x=x+1
+
+	
+not there yet, x=0
+not there yet, x=1
+not there yet, x=2
+not there yet, x=3
+not there yet, x=4
+>>> print("x=" +str(x))
+x=5
+
+
+example:
+
+def attempts(n):
+    x = 1
+    while x <= n:
+        print("Attempt " + str(x))
+        x += 1
+    print("Done")
+    
+attempts(5)
+
+output:
+Attempt 1
+Attempt 2
+Attempt 3
+Attempt 4
+Attempt 5
+Done
+
+
+example:
+
+In this code, there's an initialization problem that's causing our function to behave incorrectly. Can you find the problem and fix it?
+
+def count_down(start_number):
+  current=3
+  while (current > 0):
+    print(current)
+    current -= 1
+  print("Zero!")
+  
+  output:
+  
+  Here is your output:
+3
+2
+1
+Zero!
+
+You nailed it! By initializing the current variable you got
+the function to behave correctly.
+
+
+eample: to print 1 to 5 numbers
+
+def print_range(start, end):
+	# Loop through the numbers from start to end
+	n = start
+	while n <= end:
+		print(n)
+		n+=1
+
+print_range(1, 5)  # Should print 1 2 3 4 5 (each number on its own line) 
+
+output:
+1
+2
+3
+4
+5
+
+
+example:Fill in the blanks to make the print_prime_factors function print all the prime factors of a number. A prime factor is a number that is prime and divides another without a remainder.
+
+
+def print_prime_factors(number):
+  # Start with two, which is the first prime
+  factor = 2
+  # Keep going until the factor is larger than the number
+  while factor <= number:
+    # Check if factor is a divisor of number
+    if number % factor == 0:
+      # If it is, print it and divide the original number
+      print(factor)
+      number = number / factor
+    else:
+      # If it's not, increment the factor by one
+      factor+=1
+  return "Done"
+
+print_prime_factors(100)
+# Should print 2,2,5,5
+# DO NOT DELETE THIS COMMENT
+
+output:
+2
+2
+5
+5
+
+example:
+
+Question 3
+The following code can lead to an infinite loop. Fix the code so that it can finish successfully for all numbers.
+
+Note: Try running your function with the number 0 as the input, and see what you get!
+
+note: i have done this task
+
+def is_power_of_two(n):
+  # Check if the number can be divided by two without a remainder
+  while n % 2 == 0 and n>1:
+    n = n / 2
+ 
+  # If after dividing by two the number is 1, it's a power of two
+  if n == 1:
+    
+    return True
+  return False
+  
+
+print(is_power_of_two(0)) # Should be False
+print(is_power_of_two(1)) # Should be True
+print(is_power_of_two(8)) # Should be True
+print(is_power_of_two(9)) # Should be False
+
+output:
+False
+True
+True
+False
+
+
+example:
+
+def sum_divisors(n):
+  
+  # Return the sum of all divisors of n, not including n
+  return sum([i for i in range(1, n)
+                if n % i == 0])
+
+
+print(sum_divisors(0))
+# 0
+print(sum_divisors(3)) # Should sum of 1
+# 1
+print(sum_divisors(36)) # Should sum of 1+2+3+4+6+9+12+18
+# 55
+print(sum_divisors(102)) # Should be sum of 2+3+6+17+34+51
+# 114
+
+output:
+
+0
+1
+55
+114
+
+example:The multiplication_table function prints the results of a number passed to it multiplied by 1 through 5. An additional requirement is that the result is not to exceed 25, which is done with the break statement. Fill in the blanks to complete the function to satisfy these conditions.
+
+def multiplication_table(number):
+	# Initialize the starting point of the multiplication table
+	multiplier = 1
+	# Only want to loop through 5
+	while multiplier <= 5:
+		result = number*multiplier
+		# What is the additional condition to exit out of the loop?
+		if result>25 :
+			break
+		print(str(number) + "x" + str(multiplier) + "=" + str(result))
+		# Increment the variable for the loop
+		multiplier+= 1
+
+multiplication_table(3) 
+# Should print: 3x1=3 3x2=6 3x3=9 3x4=12 3x5=15
+
+multiplication_table(5) 
+# Should print: 5x1=5 5x2=10 5x3=15 5x4=20 5x5=25
+
+multiplication_table(8)	
+# Should print: 8x1=8 8x2=16 8x3=24
+
+output:
+
+3x1=3
+3x2=6
+3x3=9
+3x4=12
+3x5=15
+5x1=5
+5x2=10
+5x3=15
+5x4=20
+5x5=25
+8x1=8
+8x2=16
+8x3=24
+
+example:
+
+Fill in the gaps of the sum_squares function, so that it returns the sum of all the squares of numbers between 0 and x (not included). Remember that you can use the range(x) function to generate a sequence of numbers from 0 to x (not included).
+
+def square(n):
+    return n*n
+
+def sum_squares(x):
+    sum = 0
+    for n in range(1,x):
+        sum += square(n)
+    return sum
+
+print(sum_squares(10)) # Should be 285
+
+
+Here is your output:
+285
+
+Nice job! You've got Python to do some complex operations
+for you!
+
+example: on for loop:
+friends = ['Taylor','Alex','Pat','Eli']
+for friend in friends:
+    print("Hi "+friend)
+output:
+Hi Taylor
+Hi Alex
+Hi Pat
+Hi Eli
+
+example:
+
+# To calculate sum and average
+values=[23,52,59,37,48]
+sum=0
+length=0
+for value in values:
+    sum+=value
+    length+=1
+print("Total sum: "+str(sum)+"-Average: "+str(sum/length))
+
+output:
+
+Total sum: 219-Average: 43.8
+
+example:
+
+>>> product=1
+>>> for n in range(1,10):
+	product=product*n
+	print(product)
+
+	
+1
+2
+6
+24
+120
+720
+5040
+40320
+362880
+
+example: to find factorial
+
+def factorial(n):
+    result = 1
+    for i in range(n):
+        result *=n
+        n-=1
+        
+    return result
+
+print(factorial(4)) # should return 24
+print(factorial(5)) # should return 120
+
+Here is your output:
+24
+120
+
+Well done, you! The pieces of code you're tackling keep
+getting more complex, but you're doing a great job!
+

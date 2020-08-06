@@ -651,3 +651,82 @@ Here is your output:
 Well done, you! The pieces of code you're tackling keep
 getting more complex, but you're doing a great job!
 
+example:
+#product of all numbers from 1 to 10
+product =1
+for n in range(1,10):
+    product = product*n
+print(product)
+
+output:
+362880
+
+example: Temperature
+
+def to_celsius(x):
+    return (x-32)*5/9
+for x in range(0,101,10):
+    print(x, to_celsius(x))
+
+output:
+0 -17.77777777777778
+10 -12.222222222222221
+20 -6.666666666666667
+30 -1.1111111111111112
+40 4.444444444444445
+50 10.0
+60 15.555555555555555
+70 21.11111111111111
+80 26.666666666666668
+90 32.22222222222222
+100 37.77777777777778
+
+example:
+Note:
+end=" " -->helps to print in a new line every time.
+
+# Program to print each domino tail in a set:
+for left in range(7):
+    for right in range(left, 7):
+        print("[" + str(left) + "|" +str(right)+ "]", end=" ")
+    print()
+
+output:
+[0|0] [0|1] [0|2] [0|3] [0|4] [0|5] [0|6] 
+[1|1] [1|2] [1|3] [1|4] [1|5] [1|6] 
+[2|2] [2|3] [2|4] [2|5] [2|6] 
+[3|3] [3|4] [3|5] [3|6] 
+[4|4] [4|5] [4|6] 
+[5|5] [5|6] 
+[6|6] 
+
+
+Note:
+In this code, we're using a new parameter that we passed to the print function. This parameter is called End. Normally, once print has taken the content we passed and written it to the screen, then it writes a special character that creates a new line called the newline character. If we want print to write something else instead of the newline character, we use the end parameter, like we see in this example. Notice how the second for loop iterates over a different number of elements each time it's called as the value of left changes. Depending on what you want to achieve with your nested loops, you may want both loops to always go through the same number of elements. Or you might want the second loop to connect to the first one. 
+
+example:
+
+Let's say you run a local girl's basketball league in your town. You have four teams that will play against each other in the league, both at home and away. You've stored the names of the teams in a list, like this. We want to write a script that will output all possible team pairings. we don't want to do is have a team playing against itself.
+
+teams =['Dragon','Wolves','Pandas','Unicorns']
+for home_team in teams:
+    for away_team in teams:
+        if home_team!=away_team:
+            print(home_team+' vs '+away_team)
+
+output:
+
+Dragon vs Wolves
+Dragon vs Pandas
+Dragon vs Unicorns
+Wolves vs Dragon
+Wolves vs Pandas
+Wolves vs Unicorns
+Pandas vs Dragon
+Pandas vs Wolves
+Pandas vs Unicorns
+Unicorns vs Dragon
+Unicorns vs Wolves
+Unicorns vs Pandas
+
+

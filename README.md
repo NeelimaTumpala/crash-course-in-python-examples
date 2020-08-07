@@ -729,4 +729,361 @@ Unicorns vs Dragon
 Unicorns vs Wolves
 Unicorns vs Pandas
 
+example:
+#For loop from 0 to 2, therefore running 3 times
+for x in range(0, 3):
+    print("We're on time %d" % (x))
+output:
+We're on time 0
+We're on time 1
+We're on time 2
+
+example:
+#While loop from 1 to infinity, therefore running forever.
+
+
+x = 1
+while True:
+    print("To infinity and beyond! We're getting close, on %d now!" % (x))
+    x += 1
+output:
+To infinity and beyond! We're getting close, on 1 now!
+and so on will continue until infinity
+
+example:
+# to print(1 to 10 tables)
+for x in range(1, 11):
+    for y in range(1, 11):
+        print('%d * %d = %d' % (x, y, x*y))
+output:
+1 * 1 = 1
+1 * 2 = 2
+1 * 3 = 3
+1 * 4 = 4
+1 * 5 = 5
+1 * 6 = 6
+1 * 7 = 7
+1 * 8 = 8
+1 * 9 = 9
+1 * 10 = 10
+2 * 1 = 2
+2 * 2 = 4
+2 * 3 = 6
+2 * 4 = 8
+2 * 5 = 10
+2 * 6 = 12
+2 * 7 = 14
+2 * 8 = 16
+2 * 9 = 18
+2 * 10 = 20
+3 * 1 = 3
+3 * 2 = 6
+3 * 3 = 9
+3 * 4 = 12
+3 * 5 = 15
+3 * 6 = 18
+3 * 7 = 21
+3 * 8 = 24
+3 * 9 = 27
+3 * 10 = 30
+4 * 1 = 4
+4 * 2 = 8
+4 * 3 = 12
+4 * 4 = 16
+4 * 5 = 20
+4 * 6 = 24
+4 * 7 = 28
+4 * 8 = 32
+4 * 9 = 36
+4 * 10 = 40
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+6 * 1 = 6
+6 * 2 = 12
+6 * 3 = 18
+6 * 4 = 24
+6 * 5 = 30
+6 * 6 = 36
+6 * 7 = 42
+6 * 8 = 48
+6 * 9 = 54
+6 * 10 = 60
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70
+8 * 1 = 8
+8 * 2 = 16
+8 * 3 = 24
+8 * 4 = 32
+8 * 5 = 40
+8 * 6 = 48
+8 * 7 = 56
+8 * 8 = 64
+8 * 9 = 72
+8 * 10 = 80
+9 * 1 = 9
+9 * 2 = 18
+9 * 3 = 27
+9 * 4 = 36
+9 * 5 = 45
+9 * 6 = 54
+9 * 7 = 63
+9 * 8 = 72
+9 * 9 = 81
+9 * 10 = 90
+10 * 1 = 10
+10 * 2 = 20
+10 * 3 = 30
+10 * 4 = 40
+10 * 5 = 50
+10 * 6 = 60
+10 * 7 = 70
+10 * 8 = 80
+10 * 9 = 90
+10 * 10 = 100
+
+example:
+for x in range(3):
+    print(x)
+else:
+    print('Final x = %d' % (x))
+output:
+0
+1
+2
+Final x = 2
+
+example:
+string = "Hello World"
+for x in string:
+    print(x)
+output:
+H
+e
+l
+l
+o
+ 
+W
+o
+r
+l
+d
+
+example:
+collection = ['hey', 5, 'd']
+for x in collection:
+    print(x)
+output:
+hey
+5
+d
+
+example:
+#Loop over Lists of lists
+list_of_lists = [ [1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for list in list_of_lists:
+    for x in list:
+        print(x)
+output:
+=============== RESTART: C:\Users\L\Documents\practice page 3.py ===============
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+example:
+mylist = ['a', 'b', 'c', 'd']
+for v in mylist:
+    # do something with v
+    print(v,end=" ")
+output:
+a b c d 
+
+example:
+Your own range generator using yield
+
+
+def my_range(start, end, step):
+    while start <= end:
+        yield start
+        start += step
+
+for x in my_range(1, 10, 0.5):
+    print(x)
+output:
+1
+1.5
+2.0
+2.5
+3.0
+3.5
+4.0
+4.5
+5.0
+5.5
+6.0
+6.5
+7.0
+7.5
+8.0
+8.5
+9.0
+9.5
+10.0
+
+example:
+#Creating your own iterable
+class Iterable(object):
+
+    def __init__(self,values):
+        self.values = values
+        self.location = 0
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        if self.location == len(self.values):
+            raise StopIteration
+        value = self.values[self.location]
+        self.location += 1
+        return value
+example:
+Write a script that prints the multiples of 7 between 0 and 100. Print one multiple per line and avoid printing any numbers that aren't multiples of 7. Remember that 0 is also a multiple of 7.
+
+for i in range(0,101):
+    if i%7==0:
+        print(i)
+output:
+0
+7
+14
+21
+28
+35
+42
+49
+56
+63
+70
+77
+84
+91
+98
+
+example:
+
+Question 3
+Write a script that prints the first 10 cube numbers (x**3), starting with x=1 and ending with x=10.
+for i in range(1,11):
+  print(i**3)
+  output:
+  
+1
+8
+27
+64
+125
+216
+343
+512
+729
+1000
+
+example:
+to find factorial of numbers from 1 t 10
+def factorial(n):
+    result = 1
+    for x in range(result,n):
+        result=result*n
+        n=n-1
+    return result
+
+for n in range(1,11):
+    print(n, factorial(n))
+output:
+1 1
+2 2
+3 6
+4 24
+5 120
+6 720
+7 5040
+8 40320
+9 362880
+10 3628800
+
+example:The retry function tries to execute an operation that might fail, it retries the operation for a number of attempts. Currently the code will keep executing the function even if it succeeds. Fill in the blank so the code stops trying after the operation succeeded.
+
+def retry(operation, attempts):
+  for n in range(attempts):
+    if operation():
+      print("Attempt " + str(n) + " succeeded")
+      break
+    else:
+      print("Attempt " + str(n) + " failed")
+      
+
+retry(create_user, 3)
+retry(stop_service, 5)
+
+example:
+
+To print factorials from 0 to 9
+
+def factorial(n):
+    result = 1
+    for x in range(1,n):
+        result = result * n
+        n=n-1
+    return result
+
+for n in range(0,10):
+    print(n, factorial(n+0))
+    
+output:
+
+0 1
+1 1
+2 2
+3 6
+4 24
+5 120
+6 720
+7 5040
+8 40320
+9 362880
+
+output:
+
+Attempt 0 failed
+Attempt 1 failed
+Attempt 2 succeeded
+Attempt 0 succeeded
+Attempt 0 failed
+Attempt 1 failed
+Attempt 2 failed
+Attempt 3 succeeded
+None
 

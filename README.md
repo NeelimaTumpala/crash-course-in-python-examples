@@ -1352,3 +1352,118 @@ def votes(params):
 	for vote in params:
 	    print("Possible option:" + vote)
 ans: (['yes','no','maybe'])
+
+example:
+
+Modify the double_word function so that it returns the same word repeated twice, followed by the length of the new doubled word. For example, double_word("hello") should return hellohello10.
+
+def double_word(word):
+    word=word*2
+    return word+str(len(word))
+
+print(double_word("hello")) # Should return hellohello10
+print(double_word("abc"))  # Should return abcabc6
+print(double_word(""))      # Should return 0
+
+Here is your output:
+hellohello10
+abcabc6
+0
+
+Great work! You're getting comfortable using some of the
+basic string operations. You'll soon be working on even more
+interesting tasks!
+
+example:
+
+Want to give it a go yourself? Be my guest! Modify the first_and_last function so that it returns True if the first letter of the string is the same as the last letter of the string, False if they’re different. Remember that you can access characters using message[0] or message[-1]. Be careful how you handle the empty string, which should return True since nothing is equal to nothing.
+
+def first_and_last(message):
+    return False
+
+print(first_and_last("else"))
+print(first_and_last("tree"))
+print(first_and_last(""))
+
+output
+
+
+strings:
+
+>>> name = "Neelima"
+>>> print(name[1])
+e
+>>> text="Random string with a lot of characters"
+>>> print(text[-1])
+s
+>>> print(text[-2])
+r
+>>> color = 'orange'
+>>> color[1:4]
+'ran'
+>>> fruit = "pineapple"
+>>> print(fruit[:4])
+pine
+>>> print(fruit[4:])
+apple
+>>> message= "A kong string with a silly typo"
+>>> message[2]='l'
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    message[2]='l'
+TypeError: 'str' object does not support item assignment
+>>> new_message=message[0:2]+"l"+message[3:]
+>>> print(new_message)
+A long string with a silly typo
+>>> pets="cats & Dogs"
+>>> pets.index("&")
+5
+>>> pets.index("c")
+0
+>>> pets.index("Dog")
+7
+>>> pets.index("s")
+3
+>>> pets.index("x")
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    pets.index("x")
+ValueError: substring not found
+>>> "Dragons" in pets
+False
+>>> "cats" in pets
+True
+>>> "mountains".upper()
+'MOUNTAINS'
+>>> "Mountains".lower()
+'mountains'
+>>> answer = 'YES'
+>>> if answer.lower() == "yes":
+	print("User said yes")
+
+	
+User said yes
+>>> "The number of times e occurs in this string is 4".count("e")
+4
+>>> "forest".isnumeric()
+False
+>>> "12345".isnumeric()
+True
+>>> "Forest".endswith("rest")
+True
+>>> int("12345") + int("54321")
+66666
+>>> " ".join(['This','is','a','string','joined','by','spaces'])
+'This is a string joined by spaces'
+>>> "...".join(['This','is','a','string','joined','by','three','dots'])
+'This...is...a...string...joined...by...three...dots'
+	
+example:
+program to update new email ids:
+
+def replace_domain(email,old_domain,new_domain):
+    if "@" +old_domain in email:
+        index = email.index("@"+old_domain)
+        new_email=email[:index]+"@"+new_domain
+        return new_email
+    return email

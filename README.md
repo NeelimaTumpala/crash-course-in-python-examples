@@ -1467,3 +1467,68 @@ def replace_domain(email,old_domain,new_domain):
         new_email=email[:index]+"@"+new_domain
         return new_email
     return email
+    
+    
+example: unsolved
+
+Fill in the gaps in the initials function so that it returns the initials of the words contained in the phrase received, in upper case. For example: "Universal Serial Bus" should return "USB"; "local area network" should return "LAN”.
+
+def initials(phrase):
+    words = phrase.___
+    result = ""
+    for word in words:
+        result += ___
+    return ___
+
+print(initials("Universal Serial Bus")) # Should be: USB
+print(initials("local area network")) # Should be: LAN
+print(initials("Operating system")) # Should be: OS
+
+output:
+
+
+example:
+>>> name="Neelima"
+>>> number = len(name)*3
+>>> print("Hello {}, your lucky number is {}".format(name,number))
+Hello Neelima, your lucky number is 21
+>>> print("Your lucky number is {number},{name}".format(name=name,number=len(name)*3))
+Your lucky number is 21,Neelima
+
+example:
+Modify the student_grade function using the format method, so that it returns the phrase "X received Y% on the exam". For example, student_grade("Reed", 80) should return "Reed received 80% on the exam".
+
+def student_grade(name, grade):
+	print("{x} received {y}% on the exam.".format(x=name,y=grade))
+	return ""
+
+print(student_grade("Reed", 80))
+print(student_grade("Paige", 92))
+print(student_grade("Jesse", 85))
+
+output:
+
+Here is your output:
+Reed received 80% on the exam.
+
+Paige received 92% on the exam.
+
+Jesse received 85% on the exam.
+
+
+Not quite. Check that you're filling in the contents of the
+student_grade function as requested.
+
+example:
+
+>>> price=7.5
+>>> with_tax=price*1.09
+>>> print(price,with_tax)
+7.5 8.175
+
+
+>>> print("Base price: ${:.2f}.with Tax: ${:.2f}".format(price,with_tax))
+Base price: $7.50.with Tax: $8.18
+
+NOTE:
+You can also put a formatting expression inside the curly brackets, which lets you alter the way the string is formatted. For example, the formatting expression {:.2f} means that you’d format this as a float number, with two digits after the decimal dot. The colon acts as a separator from the field name, if you had specified one. You can also specify text alignment using the greater than operator: >. For example, the expression {:>3.2f} would align the text three spaces to the right, as well as specify a float number with two decimal places. String formatting can be very handy for outputting easy-to-read textual output.
